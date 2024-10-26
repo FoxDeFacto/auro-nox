@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shows_details",
+  "info": {
+    "singularName": "shows-detail",
+    "pluralName": "shows-details",
+    "displayName": "ShowsDetail"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Titulek": {
+      "type": "string",
+      "required": true
+    },
+    "Popis": {
+      "type": "richtext",
+      "required": true
+    },
+    "Obrazek": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

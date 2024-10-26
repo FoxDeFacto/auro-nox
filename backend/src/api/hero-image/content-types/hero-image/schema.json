@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hero_images",
+  "info": {
+    "singularName": "hero-image",
+    "pluralName": "hero-images",
+    "displayName": "HeroImage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Jmeno": {
+      "type": "string",
+      "required": true
+    },
+    "Popis": {
+      "type": "richtext",
+      "required": true
+    },
+    "Obrazek": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}
