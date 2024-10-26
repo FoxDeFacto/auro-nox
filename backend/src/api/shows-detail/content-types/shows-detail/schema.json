@@ -4,7 +4,8 @@
   "info": {
     "singularName": "shows-detail",
     "pluralName": "shows-details",
-    "displayName": "ShowsDetail"
+    "displayName": "ShowsDetail",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -20,11 +21,31 @@
       "required": true
     },
     "Obrazek": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Cas": {
+      "type": "string",
+      "required": true
+    },
+    "Venek": {
+      "type": "string",
+      "required": true
+    },
+    "Vnitrek": {
+      "type": "string",
+      "required": true
+    },
+    "PotrebaProstoru": {
+      "type": "string",
+      "required": true
+    },
+    "PocetLidi": {
+      "type": "string",
       "required": true
     }
   }

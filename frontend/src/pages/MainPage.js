@@ -1,5 +1,6 @@
-import { useState, useEffect, useRef } from 'react'
-import { Menu, X, ChevronDown, Instagram, Facebook, Calendar } from 'lucide-react'
+import { useState, useEffect, useRef } from 'react';
+import { Menu, X, ChevronDown, Instagram, Facebook, Calendar } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
 import DynamicIcon from './componens/DynamicIcon';
 import config from '../config.json';
 
@@ -294,7 +295,7 @@ export default function MainPage() {
         </div>
       )}
 
-      {/* Hero Section */}
+      {/* Home Section */}
       <section id="home" className="h-screen flex items-center justify-center relative overflow-hidden">
         <div className="absolute inset-0 w-full h-full">
           <img 
@@ -334,9 +335,9 @@ export default function MainPage() {
             <>
             <h2 className="text-4xl font-bold mb-12 text-center">{item.Nazev}</h2>
             <div key={index} className="max-w-4xl mx-auto text-center space-y-8">
-              <p className="text-lg text-gray-300 leading-relaxed">
+              <ReactMarkdown className="text-lg text-gray-300 leading-relaxed">
               {item.Obsah}
-              </p>
+              </ReactMarkdown>
             </div>
           </>
           ))}
@@ -375,9 +376,9 @@ export default function MainPage() {
           {showsDetails.map((show) => (
             <TabsContent key={show.id} value={show.id} activeTab={activeTab}>
               <div className="grid md:grid-cols-2 gap-12">
-                <div className="space-y-6">
-                  <h3 className="text-3xl font-semibold mb-4">{show.Titulek}</h3>
-                  <p className="text-gray-300 leading-relaxed text-lg">{show.Popis}</p>
+                <div className="space-y-6 mt-5">
+                  <h3 className="text-3xl font-semibold mb-4 text-center">{show.Titulek}</h3>
+                  <ReactMarkdown className="text-gray-300 leading-relaxed text-lg">{show.Popis}</ReactMarkdown>
                 </div>
                 <div className="aspect-video rounded-lg overflow-hidden shadow-2xl">
                   <img
@@ -387,7 +388,34 @@ export default function MainPage() {
                   />
                 </div>
               </div>
+
+               {/* Icons Section */}
+                <div className="mt-12">
+                  <div className="grid grid-cols-5 gap-4">
+                    <div className="flex flex-col items-center">
+                      <DynamicIcon iconName={'Clock'} size={55} color='red'/>
+                      <div className="text-gray-300">{show.Cas}</div>
+                    </div>
+                    <div className="flex flex-col items-center">
+                      <DynamicIcon iconName={'Users'} size={55} color='red'/>
+                      <div className="text-gray-300">{show.PocetLidi}</div>
+                    </div>
+                    <div className="flex flex-col items-center">
+                      <DynamicIcon iconName={'Sun'} size={55} color='red'/>
+                      <div className="text-gray-300">{show.Venek}</div>
+                    </div>
+                    <div className="flex flex-col items-center">
+                      <DynamicIcon iconName={'Home'} size={55} color='red'/>
+                      <div className="text-gray-300">{show.Vnitrek}</div>
+                    </div>
+                    <div className="flex flex-col items-center">
+                      <DynamicIcon iconName={'Box'} size={55} color='red'/>
+                      <div className="text-gray-300">{show.PotrebaProstoru}</div>
+                    </div>
+                  </div>
+                </div>
             </TabsContent>
+
           ))}
         </div>
       </section>

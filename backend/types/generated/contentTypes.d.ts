@@ -544,6 +544,7 @@ export interface ApiHeroImageHeroImage extends Struct.CollectionTypeSchema {
 export interface ApiShowsDetailShowsDetail extends Struct.CollectionTypeSchema {
   collectionName: 'shows_details';
   info: {
+    description: '';
     displayName: 'ShowsDetail';
     pluralName: 'shows-details';
     singularName: 'shows-detail';
@@ -552,6 +553,7 @@ export interface ApiShowsDetailShowsDetail extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    Cas: Schema.Attribute.String & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -562,12 +564,16 @@ export interface ApiShowsDetailShowsDetail extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     Obrazek: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    PocetLidi: Schema.Attribute.String & Schema.Attribute.Required;
     Popis: Schema.Attribute.RichText & Schema.Attribute.Required;
+    PotrebaProstoru: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     Titulek: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    Venek: Schema.Attribute.String & Schema.Attribute.Required;
+    Vnitrek: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
